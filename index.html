@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Paint</title>
+      <link rel="stylesheet" type="text/css" href="paint.css">
+    <script src="paint.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <ul>
+        <li>
+          <input onclick="Select('linea')" type="button" class="btn btn-yes" value="Linea" id="linea">
+        </li>
+        <li>
+          <input onclick="Select('lapiz')" type="button" class="btn btn-no" value="Lapiz" id="lapiz">
+        </li>
+        <li>
+          <input onclick="Select('elipse')" type="button" class="btn btn-no" value="Elipse" id="elipse">
+        </li>
+        <li>
+          <input onclick="Select('circulo')" type="button" class="btn btn-no" value="Circulo" id="circulo">
+        </li>
+        <li>
+          <input onclick="Select('rectangulo')" type="button" class="btn btn-no" value="Rectangulo" id="rectangulo">
+        </li>
+        <li>
+          <input onclick="Select('cuadrado')" type="button" class="btn btn-no" value="Cuadrado" id="cuadrado">
+        </li>
+        <li>
+          Contorno
+          <input id="c_color" type="color">
+        </li>
+        <li>
+          Relleno
+          <input type="checkbox" id="relleno">
+          <input id="r_color" type='color'/>
+        </li>
+        <li>
+          <input onclick="Select('borrador')" type="button" class="btn btn-no" value="Borrador" id="borrador">
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <div>
+            <button id="save">Guardar</button>
+            <i class="fa fa-floppy-o"></i>
+          </div>
+        </li>
+        
+      </ul>
+      <ul>
+        <li>
+          <div>
+            <label>Cargar dibujo</label>
+            <input type="file" id="load">
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+      
+    <div id="div_canvas">
+      <canvas id="canvas" width="1350px" height="535px">Su navegador no soporta canvas</canvas>
+      <button id="cls">Limpiar canvas</button>
+    </div>
+  </body>
+</html>
