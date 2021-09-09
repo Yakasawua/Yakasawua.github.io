@@ -26,6 +26,7 @@ function start() {
     ctx.clearRect(0, 0, cw, ch);
     Trazados.length = 0;
     puntos.length = 0;
+    dibujos = { dibujos:{} };
   }, false);
 
 
@@ -35,6 +36,7 @@ function start() {
     dibujar = true;
     puntos.length = 0;
     ctx.beginPath();
+    relleno = document.getElementById("relleno").checked;
   }, false);
 
   canvas.addEventListener('mouseup', () => {
@@ -47,7 +49,8 @@ function start() {
       "x1": x1,
       "y1": y1,
       "x2": x2,
-      "y2": y2
+      "y2": y2,
+      "relleno": relleno
     };
     redibujarTrazados();
     redibujarfiguras();
@@ -114,7 +117,7 @@ function start() {
       dibujar_figuras(dibujos.dibujos[i].tipo, dibujos.dibujos[i].x1,dibujos.dibujos[i].x2,dibujos.dibujos[i].y1,dibujos.dibujos[i].y2,
         dibujos.dibujos[i].c_contorno,
         dibujos.dibujos[i].c_relleno,
-        relleno);
+        dibujos.dibujos[i].relleno);
     }
   }
 
@@ -238,6 +241,7 @@ function Select(e){
   document.getElementById("circulo").className = "btn btn-no";
   document.getElementById("rectangulo").className = "btn btn-no";
   document.getElementById("cuadrado").className = "btn btn-no";
+  document.getElementById("borrador").className = "btn btn-no";
   document.getElementById(e).className = "btn btn-yes";
   Toolselect = e;
 }
